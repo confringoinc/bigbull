@@ -38,7 +38,7 @@ export default class portfolio extends React.Component {
         symbols += ",";
         symbols += watchlist[index];
       }
-      const latestPrice = `https://cloud.iexapis.com/stable/stock/market/batch?symbols=${symbols}&types=quote&token=${process.env.REACT_APP_IEX_KEY_3}`
+      const latestPrice = `https://cloud.iexapis.com/stable/stock/market/batch?symbols=${symbols}&types=quote&token=${process.env.REACT_APP_IEX_KEY_1}`
       fetch(latestPrice)
         .then(res => res.json())
         .then(result => {

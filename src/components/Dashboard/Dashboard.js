@@ -390,7 +390,7 @@ class Dashboard extends React.Component {
 						setTimeout(() => {
 							for (let i = 0; i < 9; i++) {
 								const percentageChange = `https://cloud.iexapis.com/stable/stock/${stockListTickers[parseInt(i)]
-									}/quote?displayPercent=true&token=${process.env.REACT_APP_IEX_KEY_3
+									}/quote?displayPercent=true&token=${process.env.REACT_APP_IEX_KEY_1
 									}`;
 								if (
 									typeof stockListTickers[parseInt(i)] !==
@@ -718,7 +718,7 @@ class Dashboard extends React.Component {
 							loader2: true,
 						});
 						this.chartSecond.current.href =
-							"/stocks/" + stockSymbols[1];
+							"/bigbull/stocks/" + stockSymbols[1];
 					} else if (this._isMounted) {
 						this.setState({
 							loader2: false,
@@ -735,7 +735,7 @@ class Dashboard extends React.Component {
 							loader1: true,
 						});
 						this.chartFirst.current.href =
-							"/stocks/" + stockSymbols[0];
+							"/bigbull/stocks/" + stockSymbols[0];
 					} else if (this._isMounted) {
 						this.setState({
 							loader1: false,

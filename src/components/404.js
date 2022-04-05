@@ -6,7 +6,7 @@ export default class page404 extends React.Component {
 		return (
 			<div className="page404">
 				<h1>Page not Found :(</h1>
-				<Link to="/bigbull/">
+				<Link to="/bigbull/dashboard">
 					<button type="submit" className="header__button-register">
 						Back to DASHBOARD
 					</button>

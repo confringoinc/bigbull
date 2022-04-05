@@ -19,106 +19,58 @@
     background-color: #3a1414!important
     &:after,&:before
       background-color: #3a1414!important
-.hamburger
-  padding: 15px
-  cursor: pointer
-  display: none
-  overflow: hidden
-  background-color: transparent
-  z-index: 100
-  @media only screen and (max-width: 600px)
-    display: inline-block
 
-.hamburger__container
-  width: 36px
-  height: 24px
-  position: relative
+.btn15
+  width: fit-content
+  height: 50px
+  transition-duration: 0.5s
+  z-index: 99999
 
-.hamburger
-  &:hover .hamburger__inner
-    transform: translate(-51px, 50%)
-    opacity: 0
-    &::before, &::after
-      transform: translate(102px, 0)
-      opacity: 0
-  &.is-active .hamburger__inner
+  @media only screen and (min-width: 600px)
     display: none
 
-.hamburger__inner
-  width: 100%
-  height: 2px
-  background-color: #fff
-  border-radius: 4px
-  position: absolute
-  transition-property: transform, opacity
-  transition-timing-function: ease
-  transition-duration: 0.4s
-  top: 50%
-  transform: translate(5px, -50%)
-  opacity: 1
-  &::before, &::after
-    width: 100%
-    height: 2px
-    background-color: #fff
-    border-radius: 4px
+  .icon
+    transition-duration: 0.5s
     position: absolute
-    transition-property: transform, opacity
-    transition-timing-function: ease
-    transition-duration: 0.4s
-    content: ""
-    opacity: 1
-    transform: translate(-5px, 0)
-  &::before
-    top: -13px
-  &::after
-    top: 13px
-
-.hamburger
-  &:hover .hamburger__hidden
-    opacity: 1
-    transform: translate(0, -50%)
-    &::before, &::after
-      opacity: 1
-      transform: translate(0, 0)
-  &.is-active .hamburger__hidden
-    opacity: 1
-    transform: rotate(45deg)
-    &::before
-      transform: translate(0, 13px) rotate(90deg)
-      transform-origin: center
-    &::after
-      transform-origin: center
-      transform: translate(0, -13px) rotate(0)
-
-.hamburger__hidden
-  opacity: 0
-  width: 100%
-  height: 2px
-  background-color: #fff
-  border-radius: 4px
-  position: absolute
-  transition-property: transform, opacity
-  transition-timing-function: ease
-  transition-duration: 0.4s
-  background-color: $main-color
-  top: 50%
-  transform: translate(51px, -50%)
-  &::before, &::after
-    width: 100%
-    height: 2px
-    background-color: #fff
+    height: 4px
+    width: 30px
+    top: 30px
+    background-color: #FFF
     border-radius: 4px
-    position: absolute
-    transition-property: transform, opacity
-    transition-timing-function: ease
-    transition-duration: 0.4s
-    background-color: $main-color
-    content: ""
-    transform: translate(102px, 0)
-  &::before
-    top: -13px
-  &::after
-    top: 13px
+    left: 15px
+
+    &:before
+      transition-duration: 0.5s
+      position: absolute
+      width: 30px
+      height: 4px
+      background-color: #FFF
+      content: ""
+      top: -10px
+      border-radius: 4px
+
+    &:after
+      transition-duration: 0.5s
+      position: absolute
+      width: 30px
+      height: 4px
+      background-color: #FFF
+      content: ""
+      top: 10px
+      border-radius: 4px
+
+  &.open .icon
+    transition-duration: 0.5s
+    background: transparent
+
+    &:before
+      transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px)
+
+    &:after
+      transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px)
+
+  &:hover
+    cursor: pointer
 
 .topbar
   width: 100%
@@ -195,7 +147,10 @@
   @media only screen and (max-width: 800px)
     width: 60%
   @media only screen and (max-width: 600px)
-    display: none
+    display: flex
+    position: absolute
+    top: 80px
+    width: 93%
 
   .topbar__results
     transition: all .4s
@@ -264,12 +219,5 @@
     svg
       min-width: 50px
     &__logo
-      min-width: 80px
+      min-width: 50px
       z-index: 100
-
-.display_mobile
-  @media only screen and (max-width: 600px)
-    display: flex
-    width: 100%
-  @media only screen and (min-width: 600px)
-    display: none

@@ -185,7 +185,7 @@ export default class stockPage extends React.Component {
 		let b = 0;
 		let filter = this.searchBarEl.current.value.toUpperCase();
 		if (e.key === "Enter") {
-			window.location = `/stocks/${filter}`;
+			window.location = `/bigbull/stocks/${filter}`;
 		}
 		if (filter.length === 0) {
 			results.innerHTML = "";
@@ -202,7 +202,7 @@ export default class stockPage extends React.Component {
 						if (a === 0) {
 							results.style.display = "flex";
 							let el = document.createElement("li");
-							el.innerHTML = `<li><a href="/stocks/${allSymbols[parseInt(i)].symbol
+							el.innerHTML = `<li><a href="/bigbull/stocks/${allSymbols[parseInt(i)].symbol
 								}"><h4>${allSymbols[parseInt(i)].symbol}</h4><h6>${allSymbols[parseInt(i)].name
 								}</h6></a></li>`;
 							results.appendChild(el);
@@ -475,7 +475,7 @@ export default class stockPage extends React.Component {
 
 	rendering() {
 		fetch(
-			`https://cloud.iexapis.com/stable/stock/${symbol}/quote?displayPercent=true&token=${process.env.REACT_APP_IEX_KEY_2}`
+			`https://cloud.iexapis.com/stable/stock/${symbol}/quote?displayPercent=true&token=${process.env.REACT_APP_IEX_KEY_1}`
 		)
 			.then((res) => res.json())
 			.then((result) => {
@@ -555,7 +555,7 @@ export default class stockPage extends React.Component {
 			);
 		document.title = `StalkStock - ${symbol}`;
 		fetch(
-			`https://cloud.iexapis.com/stable/stock/${symbol}/quote?displayPercent=true&token=${process.env.REACT_APP_IEX_KEY_2}`
+			`https://cloud.iexapis.com/stable/stock/${symbol}/quote?displayPercent=true&token=${process.env.REACT_APP_IEX_KEY_1}`
 		)
 			.then((res) => res.json())
 			.then((result) => {
@@ -622,7 +622,7 @@ export default class stockPage extends React.Component {
 						fillColor: "#ddd",
 					});
 				} else {
-					console.log("else");
+					console.log("Watchlist empty.");
 				}
 			});
 	}

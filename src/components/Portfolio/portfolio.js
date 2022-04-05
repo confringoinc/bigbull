@@ -36,7 +36,7 @@ export default class portfolio extends React.Component {
    */
 
   getLatestPrice(symbol, i) {
-    const lastPrice = `https://cloud.iexapis.com/stable/stock/${symbol}/quote?displayPercent=true&token=${process.env.REACT_APP_IEX_KEY_2}`;
+    const lastPrice = `https://cloud.iexapis.com/stable/stock/${symbol}/quote?displayPercent=true&token=${process.env.REACT_APP_IEX_KEY_1}`;
     fetch(lastPrice)
       .then(res => res.json())
       .then(result => {
