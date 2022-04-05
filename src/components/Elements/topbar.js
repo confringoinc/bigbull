@@ -37,7 +37,6 @@ export default class Topbar extends React.Component {
 		results.innerHTML = "";
 		let b = 0;
 		let filter = this.searchBarEl.current.value.toUpperCase();
-		console.log(filter)
 		if (e.key === "Enter") {
 			window.location = `/bigbull/stocks/${filter}`;
 		}
@@ -141,8 +140,8 @@ export default class Topbar extends React.Component {
 						<Leftbar></Leftbar>
 					</div>
 					<div className="topbar">
-						<div class="menu btn15" data-menu="15" ref={this.hamburger}>
-        			<div class="icon"></div>
+						<div className="menu btn15" data-menu="15" ref={this.hamburger}>
+        			<div className="icon"></div>
       			</div>
 						<Link to='/bigbull/dashboard' style={{ display: "flex" }}>
 							<img src={require("../../images/bigbull.png")} alt="" width={40} />

@@ -219,9 +219,6 @@ export default class portfolio extends React.Component {
           }
         }.bind(this),
       );
-    document.querySelector(".hamburger").addEventListener("click", e => {
-      e.currentTarget.classList.toggle("is-active");
-    });
   }
   componentWillUnmount() {
     this._isMounted = false;
@@ -274,7 +271,7 @@ export default class portfolio extends React.Component {
                       </td>
                       <td>${value[parseInt(index)]}</td>
                       <td>
-                        <button class="stockPage__sell-button" onClick={() => {
+                        <button className="stockPage__sell-button" onClick={() => {
                           if (this.state.marketStatus) {
                             this.handleStockSell(
                               position[parseInt(index)],
