@@ -56,7 +56,7 @@ export default class Topbar extends React.Component {
 						if (a === 0) {
 							results.style.display = "flex";
 							let el = document.createElement("li");
-							el.innerHTML = `<a href="/stocks/${allSymbols[parseInt(i)]
+							el.innerHTML = `<a href="/bigbull/stocks/${allSymbols[parseInt(i)]
 								}"><h4>${allSymbols[parseInt(i)]}</h4><h6>${allNames[parseInt(i)]
 								}</h6></a>`;
 							results.appendChild(el);
